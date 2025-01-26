@@ -462,3 +462,58 @@ We hope that you have enjoyed the logistic regression section and we wanted to t
 
 Case study for Breast Cancer detection using Logistic Regression. You can access it
 
+
+# Section 17: K-Nearest Neighbors (K-NN)
+
+## 173. K-Nearest Neighbors (KNN) Explained: A Beginner's Guide to Classification
+
+### **Scenario**
+There are **two categories** preset in the database (e.g., **RED** and **GREEN**).  
+Now, we add a **new data point**.  
+
+**Question:** Should we add it to the **RED** or **GREEN** category?  
+KNN helps to determine this.
+
+---
+
+## **Simple Algorithm**
+### **Steps:**
+
+1. **Choose the number K of neighbors**  
+   ![KNN](image-7.png)
+
+2. **Take the K nearest neighbors of the new data point according to the Euclidean Distance**  
+   ![step2](image-9.png)
+
+3. **Among these K neighbors, count the number of data points in each category**  
+   ![step3](image-10.png)
+
+4. **Assign the new data point to the category where you counted the most neighbors**  
+   - Model is ready! 🎉  
+   ![step4](image-11.png)
+
+---
+
+## **Euclidean Distance**  
+The Euclidean Distance formula helps calculate the distance between points:  
+![euclidian-Distance](image-8.png)
+
+---
+
+## **KNN Like I'm 5**  
+_No worries! Let me break it down even more simply. 😊_
+
+### **Imagine You’re in a New School 🏫**  
+🔹 You don’t know **which group of friends** to join.  
+🔹 You look around and see **two groups**:  
+
+- **Football kids** 🏈 (they wear jerseys)  
+- **Book lovers** 📚 (they carry books)  
+
+Now, what do you do? 🤔  
+
+✅ You look at the **closest students** near you.  
+✅ If most of them are **football kids**, you decide to sit with them.  
+✅ If most of them are **book lovers**, you choose them instead!  
+
+**That’s exactly how K-Nearest Neighbors (KNN) works!** 🚀  
