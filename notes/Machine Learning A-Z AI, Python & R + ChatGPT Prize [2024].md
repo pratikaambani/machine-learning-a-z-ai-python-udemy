@@ -419,3 +419,32 @@ SKIPPED_R
 
 SKIPPED_R
 
+## 171. Machine Learning Regression and Classification EXTRA
+
+Machine Learning Regression and Classification EXTRA
+Are you having trouble mastering the basics of Regression and Classification?
+
+Mastering these Machine Learning concepts is essential for any data scientist eyeing to succeed.
+
+That’s exactly why we’ve created the 'Ultimate Guide to Regression and Classification' for anyone looking to learn or simply brush up on the principles behind these analysis concepts.
+
+Here’s what’s covered inside:
+
+Simple Linear Regression
+
+Multiple Linear Regression
+
+Logistic Regression
+
+Click here to access the Ultimate Guide to Regression and Classification: <https://www.superdatascience.com/blogs/the-ultimate-guide-to-regression-classification>
+<https://www.slideshare.net/slideshow/deep-learning-az-regression-classification-module-7/111051391>
+
+# pending #TODO
+
+## Quiz 9: Logistic Regression Quiz
+
+- Logistic Regression is a linear classifier
+- Using the formula for logistic regression, the line is seen as the best fit (similar to linear regression)
+- Logistic Regression returns probabilities
+- Probability represented by p_hat
+- In our example from the intuition, if a person has a 27% probability (below 50) would they would be seen as taking the offer or not taking the offer? In this, it can help to think of the projected upwards or downwards functionality. ==> Not taking offer
