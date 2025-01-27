@@ -448,3 +448,17 @@ Click here to access the Ultimate Guide to Regression and Classification: <https
 - Logistic Regression returns probabilities
 - Probability represented by p_hat
 - In our example from the intuition, if a person has a 27% probability (below 50) would they would be seen as taking the offer or not taking the offer? In this, it can help to think of the projected upwards or downwards functionality. ==> Not taking offer
+
+## 172. EXTRA CONTENT: Logistic Regression Practical Case Study
+
+EXTRA CONTENT: Logistic Regression Practical Case Study
+Dear Students,
+
+We hope that you have enjoyed the logistic regression section and we wanted to thank you for all of your feedback throughout the course. To thank you, and to help you on your journey in ML we are happy to share with you the following link to a free case study for Breast Cancer detection using Logistic Regression. You can access it here!
+
+<https://www.udemy.com/course/logistic-regression-cancer-detection-case-study/?referralCode=7E62BC258B645C95D9F5>
+
+# pending #todo
+
+Case study for Breast Cancer detection using Logistic Regression. You can access it
+
