@@ -329,3 +329,93 @@ import pandas as pd
         Straight Line for Linear Models
         Non-Straight Line for Non-Linear Models
 
+## 158. Step 7b - Interpreting Logistic Regression Results: Prediction Regions Explained
+
+    Visualising the Training set results
+        ![training set](image-5.png)
+
+    from matplotlib.colors import ListedColormap
+    X_set, y_set = sc.inverse_transform(X_train), y_train
+    X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 10, stop = X_set[:, 0].max() + 10, step = 0.25),
+                        np.arange(start = X_set[:, 1].min() - 1000, stop = X_set[:, 1].max() + 1000, step = 0.25))
+    plt.contourf(X1, X2, classifier.predict(sc.transform(np.array([X1.ravel(), X2.ravel()]).T)).reshape(X1.shape),
+                alpha = 0.75, cmap = ListedColormap(('red', 'green')))
+    plt.xlim(X1.min(), X1.max())
+    plt.ylim(X2.min(), X2.max())
+    for i, j in enumerate(np.unique(y_set)):
+        plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1], c = ListedColormap(('red', 'green'))(i), label = j)
+    plt.title('Logistic Regression (Training set)')
+    plt.xlabel('Age')
+    plt.ylabel('Estimated Salary')
+    plt.legend()
+    plt.show()
+
+## 159. Step 7c - Visualizing Logistic Regression Performance on New Data in Python
+
+    Visualising the Test set results
+        ![testset](image-6.png)
+
+    from matplotlib.colors import ListedColormap
+    X_set, y_set = sc.inverse_transform(X_test), y_test
+    X1, X2 = np.meshgrid(np.arange(start = X_set[:, 0].min() - 10, stop = X_set[:, 0].max() + 10, step = 0.25),
+                        np.arange(start = X_set[:, 1].min() - 1000, stop = X_set[:, 1].max() + 1000, step = 0.25))
+    plt.contourf(X1, X2, classifier.predict(sc.transform(np.array([X1.ravel(), X2.ravel()]).T)).reshape(X1.shape),
+                alpha = 0.75, cmap = ListedColormap(('red', 'green')))
+    plt.xlim(X1.min(), X1.max())
+    plt.ylim(X2.min(), X2.max())
+    for i, j in enumerate(np.unique(y_set)):
+        plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1], c = ListedColormap(('red', 'green'))(i), label = j)
+    plt.title('Logistic Regression (Test set)')
+    plt.xlabel('Age')
+    plt.ylabel('Estimated Salary')
+    plt.legend()
+    plt.show()
+
+    To minimixr the error we need to build a prediction line that is not a straight line
+
+    This can be done with Non-Linear classifiers. To be covered later
+
+## 160. Logistic Regression in Python - Step 7 (Colour-blind friendly image)
+
+SKIPPED_R
+
+## 161. Step 1 - Data Preprocessing for Logistic Regression in R: Preparing Your Dataset
+
+SKIPPED_R
+
+## 162. Step 2 - How to Create a Logistic Regression Classifier Using R's GLM Function
+
+SKIPPED_R
+
+## 163. Step 3 - How to Use R for Logistic Regression Prediction: Step-by-Step Guide
+
+SKIPPED_R
+
+## 164. Step 4 - How to Assess Model Accuracy Using a Confusion Matrix in R
+
+SKIPPED_R
+
+## 165. Warning - Update
+
+SKIPPED_R
+
+## 166. Step 5a - Interpreting Logistic Regression Plots: Prediction Regions Explained
+
+SKIPPED_R
+
+## 167. Step 5b: Logistic Regression - Linear Classifiers & Prediction Boundaries
+
+SKIPPED_R
+
+## 168. Step 5c - Data Viz in R: Colorizing Pixels for Logistic Regression
+
+SKIPPED_R
+
+## 169. Logistic Regression in R - Step 5 (Colour-blind friendly image)
+
+SKIPPED_R
+
+## 170. Optimizing R Scripts for Machine Learning: Building a Classification Template
+
+SKIPPED_R
+
