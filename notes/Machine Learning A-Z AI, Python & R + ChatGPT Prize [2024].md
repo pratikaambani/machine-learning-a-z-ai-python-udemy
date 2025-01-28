@@ -197,3 +197,135 @@ import pandas as pd
 
     Format: classifier.predict(sc.transform([[30,870000]]))
 
+## 154. Step 5 - Comparing Predicted vs Real Results: Python Logistic Regression Guide
+
+    Predicting the Test set results
+        Same as multiple linear regressions
+    y_pred = classifier.predict(X_test)
+    np.set_printoptions(precision = 2) # upto 2 decimals
+    print(np.concatenate( (y_pred.reshape(len(y_pred), 1), y_test.reshape(len(y_test), 1)), 1 ))
+
+    [[0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 0]
+    [1 1]
+    [0 0]
+    [1 1]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 1]
+    [1 1]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 0]
+    [1 1]
+    [1 1]
+    [0 0]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 1]
+    [0 0]
+    [0 0]
+    [0 1]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 0]
+    [0 1]
+    [0 0]
+    [1 1]
+    [0 0]
+    [0 0]
+    [0 0]
+    [0 0]
+    [1 1]
+    [0 0]
+    [0 0]
+    [0 1]
+    [0 0]
+    [0 0]
+    [1 0]
+    [0 0]
+    [1 1]
+    [1 1]]
+
+## 155. Step 6a - Implementing Confusion Matrix and Accuracy Score in Scikit-Learn
+
+    Making the Confusion Matrix
+        A 2d matrix to idenfity what went right and what went wrong
+        We Compute confusion matrix to evaluate the accuracy of a classification.
+
+        from sklearn.metrics import confusion_matrix, accuracy_score
+        confusion_matrix(y_test, y_pred)
+
+## 156. Step 6b: Evaluating Classification Models - Confusion Matrix & Accuracy Metrics
+
+    from sklearn.metrics import confusion_matrix, accuracy_score
+    cm = confusion_matrix(y_test, y_pred)
+    print(cm)
+    accuracy_score(y_test, y_pred)
+    Output:
+    [[57  1]
+    [ 5 17]]
+    0.925
+
+    57 - didn't buy ==> Correct
+    17 - bought ==> Correct
+    1 - didn't buy ==> Incorrect
+    5 - bought ==> Incorrect
+    92.5% correct predictions
+
+## 157. Step 7a - Visualizing Logistic Regression Decision Boundaries in Python: 2D Plot
+
+        How logisstic refression classifies the observations in two sets: 0 and 1
+        the curve that separates these two regions is called Classification 
+        Curve
+
+        2d plot
+        X: age
+        Y: estimated salary
+
+        2 regions: cust bought subv and didn't
+        
+        We won't use this plot again ever coz dataset have many features so prediction region and prediction boundaries can be drawn in 2d plot
+
+        Straight Line for Linear Models
+        Non-Straight Line for Non-Linear Models
+
