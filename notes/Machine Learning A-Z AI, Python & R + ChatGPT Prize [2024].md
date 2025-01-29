@@ -23,7 +23,7 @@ You will find all the resources (codes, datasets, and slides) of our Machine Lea
 
 Unlike regression where you predict a continuous number, you use classification to predict a category. There is a wide variety of classification applications from medicine to marketing. Classification models include linear models like Logistic Regression, SVM, and nonlinear ones like K-NN, Kernel SVM, and Random Forests.
 
-### Machine Learning Classification Models:
+### Machine Learning Classification Models
 
 - Logistic Regression
 - K-Nearest Neighbors (K-NN)
@@ -37,14 +37,163 @@ Unlike regression where you predict a continuous number, you use classification 
 
 **Definition:** A Machine Learning technique to identify the category of new observations based on training data. Different than regression where we predict a number. Here we identify the category. It is a type of supervised machine learning.
 
-### Use Cases:
+### Use Cases
 
 - Medicine
 - Marketing
 - Businesses
 
-### Examples:
+### Examples
 
 - Which customers are likely to leave
 - Email categorization
 - Image recognition (e.g., dogs or cats)
+
+# Section 16: Logistic Regression
+
+## 144. Understanding Logistic Regression: Predicting Categorical Outcomes
+
+![Logistic Regression](media/144-1.png?raw=true "Logistic Regression")
+
+Difference from regression in classification is that we have only yes and no in y-axis.
+Equation as per image above:
+
+- p is probability
+
+![Logistic Regression](media/144-2.png?raw=true "Logistic Regression")
+
+### LR Curve
+
+- Also called sigmoid curve
+- Based on data how it will apply
+- Find where they fit between x and y based on probability
+  - Ex. For 35 years old: 42% chances are there
+  - For 45 years old: 81% chances are there
+- Most of the times we'll get binary output: Less than 50% or greater than 50%
+
+### Equation when there are more parameters
+
+![more params](image-1.png)
+
+## 145. Logistic Regression: Finding the Best Fit Curve Using Maximum Likelihood
+
+How do we know which is the best curve? ==> By calculating maximum likelihood
+
+Prediction will be between 0 to 1
+
+- Ex: 0.01, 0.04, 0.10, 0.58% chances, etc.
+- These are the probabilities of somebody saying yes
+- So probability of them saying no is 1 minus above
+
+Now we need to calculate likelihood, multiply the numbers shown below
+
+![likelihood](image-3.png)
+
+To find the best fitting curve:
+
+- Compare likelihood of different curves
+
+![fitting-curve](image-4.png)
+
+## 146. Step 1a - Building a Logistic Regression Model for Customer Behavior Prediction
+
+Code - Part 3 - Classification - Section 14
+
+<!-- Case Study: Tumour is benign or malignant -->
+
+New SUV is launched in your company
+Which of previous customers will buy a newly launched SUV?
+
+### Social_Network_Ads.csv
+
+- Age
+- Estimated Salary
+- Purchased
+
+## 147. Step 1b - Implementing Logistic Regression in Python: Data Preprocessing Guide
+
+Explain logistic regression like I'm five
+ChatGPT said:
+ChatGPT
+Alright! Imagine you have a magical yes/no machine that helps you decide if you should take an umbrella outside. 🌧️☀️
+
+👉 If it’s super cloudy – the machine says "YES, take an umbrella!"
+👉 If it’s sunny – the machine says "NO, don’t take an umbrella!"
+
+But what if the weather is partly cloudy? 🤔
+Instead of just saying yes or no, the machine gives you a probability:
+
+- 80% chance of rain? → Probably take an umbrella!
+- 20% chance of rain? → Probably don’t!
+
+🔹 Logistic Regression is like this yes/no machine. It looks at the information (like weather conditions) and predicts a probability between 0 and 1 (0% to 100%).
+
+💡 If the probability is above 50%, it predicts YES (1).
+💡 If the probability is below 50%, it predicts NO (0).
+
+### Math Magic Behind It (Super Simple Version)
+
+Logistic regression uses an equation like linear regression, but instead of predicting any number, it squeezes the result between 0 and 1 using a special curve called the sigmoid function:
+
+\[ \text{Probability} = \frac{1}{1 + e^{-(mx + b)}} \]
+
+(Just think of it as a formula that turns numbers into probabilities 📉📈)
+
+### Real-World Example
+
+- ✅ Will a person buy a car? (Yes/No) → Based on age, salary, etc.
+- ✅ Will a student pass an exam? (Yes/No) → Based on study hours, attendance, etc.
+- ✅ Is an email spam? (Yes/No) → Based on words in the email.
+
+So, Logistic Regression is just a smart yes/no machine that makes decisions based on numbers. 🧠⚡
+
+### Logistic Regression Steps
+
+1. Importing the libraries
+2. Importing the dataset
+3. Splitting the dataset into the Training set and Test set
+4. Feature Scaling
+5. Training the Logistic Regression model on the Training set
+6. Predicting a new result
+7. Predicting the Test set results
+8. Making the Confusion Matrix
+9. Visualising the Training set results
+10. Visualising the Test set results
+
+### Navigate to Logistic Regression codebase
+
+#### Importing the libraries
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+```
+
+## 150. Step 3a - How to Import and Use LogisticRegression Class from Scikit-learn
+
+    sklearn documentation: https://scikit-learn.org/stable/api/index.html
+        https://scikit-learn.org/stable/api/sklearn.linear_model.html#module-sklearn.linear_model
+        https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression
+
+## 151. Step 3b - Training Logistic Regression Model: Fit Method for Classification
+
+    Training the Logistic Regression model on the Training set
+        from sklearn.linear_model import LogisticRegression
+        classifier = LogisticRegression(random_state = 0)
+        classifier.fit(X_train, y_train)
+
+## 152. Step 4a - Formatting Single Observation Input for Logistic Regression Predict
+
+    Predicting a new result
+        classifier.predict([[30, 87]])   
+
+        but scale it,
+        classifier.predict(sc.transform([[30,87000]])
+        classifier.predict(sc.transform([[30,87000]]))
+)
+
+## 153. Step 4b: Predicted vs. Real Purchase Decisions in Logistic Regression
+
+    Format: classifier.predict(sc.transform([[30,870000]]))
+
